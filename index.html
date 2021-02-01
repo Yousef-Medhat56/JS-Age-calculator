@@ -26,8 +26,65 @@
             </div>
         </nav>
         
-        <section class="main">
-            <div id="main-dates"></div>
+        <section class="input-container">
+            <div id="input-container-text">
+                <h1>Know your age</h1>
+                <h4>in: days, hours, minutes and seconds</h4>
+            </div>
+            <div id="input-container-dates">
+                <div id="birth-date-text">
+                    <label for="birth-date"><h4>Date of birth:</h4></label>
+
+                </div>
+                <div id="birth-date-input">
+                    <select id="birth-month" name="months">
+                        <option value= 0 >January</option>
+                        <option value= 1>February</option>
+                        <option value=2>March</option>
+                        <option value=3>April</option>
+                        <option value=4>May</option>
+                        <option value=5>June</option>
+                        <option value=6>July</option>
+                        <option value=7>August</option>
+                        <option value=8>September</option>
+                        <option value=9>October</option>
+                        <option value=10>November</option>
+                        <option value=11>December</option>
+                      </select>
+                    <select id="birth-day" name="day-numbers">
+                        
+                        
+                      </select>
+
+                      <input name = "birth-year"id = "birth-year" type="number"  min = "1800" max= "2021" placeholder=" Birth year...">
+                </div>
+                
+                    <div id ="demanded-date-text">
+                    <h4>Age at the date of:</h4>
+                </div>
+                <div id="demanded-date-input">
+                    <select id="demanded-birth-month" name="months">
+                        <option value= 0 >January</option>
+                        <option value= 1>February</option>
+                        <option value=2>March</option>
+                        <option value=3>April</option>
+                        <option value=4>May</option>
+                        <option value=5>June</option>
+                        <option value=6>July</option>
+                        <option value=7>August</option>
+                        <option value=8>September</option>
+                        <option value=9>October</option>
+                        <option value=10>November</option>
+                        <option value=11>December</option>
+                      </select>
+                    <select id="demanded-birth-day" name="day-numbers">
+                        
+                      </select>
+
+                      <input name = "demanded-birth-year"id = "demanded-birth-year" type="number"  min = "1800" max= "2021" placeholder=" Birth year...">
+                </div>
+                
+            </div>
         </section>
         
     </section>
