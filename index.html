@@ -18,75 +18,116 @@
     <!--Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 </head>
+
 <body>
+    <!--Global container-->
     <section class="container">
+
+        <!--Global container | Nav bar-->
         <nav class="nav-bar">
-            <div id="nav-bar-logo">
+            <div id="nav-bar-logo"> <!--Nav bar | Logo-->
                 <h2><i class="far fa-calendar-alt"></i>Age calculator</h2>
             </div>
         </nav>
-        
+
+         <!--Global container | Input container-->
         <section class="input-container">
-            <div id="input-container-text">
+            <div id="input-container-text"> <!--Input container | text-->
                 <h1>Know your age</h1>
                 <h4>in: days, hours, minutes and seconds</h4>
             </div>
-            <div id="input-container-dates">
-                <div id="birth-date-text">
-                    <label for="birth-date"><h4>Date of birth:</h4></label>
+
+            <div id="input-container-div"> <!--Input container | div:where the <select> tags will appear and age calculations-->
+                <div id = "input-container-dates"> <!--Input container | div:where the <select> tags will appear-->
+                <div id="birth-date-text"> <!--Input container | birth date text-->
+                <h4>Date of birth:</h4>
 
                 </div>
+                <!--Input container | Birth date input-->
                 <div id="birth-date-input">
-                    <select id="birth-month" name="months">
-                        <option value= 0 >January</option>
-                        <option value= 1>February</option>
-                        <option value=2>March</option>
-                        <option value=3>April</option>
-                        <option value=4>May</option>
-                        <option value=5>June</option>
-                        <option value=6>July</option>
-                        <option value=7>August</option>
-                        <option value=8>September</option>
-                        <option value=9>October</option>
-                        <option value=10>November</option>
-                        <option value=11>December</option>
-                      </select>
-                    <select id="birth-day" name="day-numbers">
+                    
+                    <!--Birth date input | Inputing birth year-->
+                    <input onchange="createFebruaryOptions(birthYear,birthMonth,birthDaySelect,birthDayOption,birthDayOptionTxt)" 
+                    name = "birth-year"id = "birth-year" type="number"  min = "1800"  placeholder=" Birth year...">
+                    
+                    <!--Birth date input | Inputing birth month-->
+                    <select onchange="changeDayNum(birthYear,birthMonth,birthDaySelect,birthDayOption,birthDayOptionTxt)" 
+                    id="birth-month" name="months">
                         
-                        
+                       <!--Inputing birth month | month options-->
+                        <option value= "0" >January</option>
+                        <option value= "1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
                       </select>
-
-                      <input name = "birth-year"id = "birth-year" type="number"  min = "1800" max= "2021" placeholder=" Birth year...">
+                    
+                    <!--Birth date input | Inputing birth day : <option> tags will be added by JS-->
+                    <select id="birth-day" name="day-numbers"> </select>
                 </div>
                 
-                    <div id ="demanded-date-text">
-                    <h4>Age at the date of:</h4>
+                <!--Input container | Demanded date text-->
+                <div id ="demanded-date-text">
+                <h4>Age at the date of:</h4>
                 </div>
+
+                <!--Input container| Demanded date input-->
                 <div id="demanded-date-input">
-                    <select id="demanded-birth-month" name="months">
-                        <option value= 0 >January</option>
-                        <option value= 1>February</option>
-                        <option value=2>March</option>
-                        <option value=3>April</option>
-                        <option value=4>May</option>
-                        <option value=5>June</option>
-                        <option value=6>July</option>
-                        <option value=7>August</option>
-                        <option value=8>September</option>
-                        <option value=9>October</option>
-                        <option value=10>November</option>
-                        <option value=11>December</option>
-                      </select>
-                    <select id="demanded-birth-day" name="day-numbers">
-                        
+                    
+                    <!--Demanded date input | Inputing demanded year-->
+                    <input maxlength = "4" onchange="createFebruaryOptions(demandedYear,demandedMonth,demandedDaySelect,demandedDayOption, demandedDayOptionTxt)" name = "demanded-birth-year"id = "demanded-birth-year" type="number"  min = "1800" placeholder=" Birth year...">
+                    
+                    <!--Demanded date input | Inputing demanded month-->
+                    <select onchange="changeDayNum(demandedYear,demandedMonth,demandedDaySelect,demandedDayOption, demandedDayOptionTxt)" 
+                    id="demanded-birth-month" name="months">
+                    
+                        <!--Inputing demanded month | month options-->
+                        <option value= "0" >January</option>
+                        <option value= "1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
                       </select>
 
-                      <input name = "demanded-birth-year"id = "demanded-birth-year" type="number"  min = "1800" max= "2021" placeholder=" Birth year...">
+
+                    <!--Demanded date input | Inputing demanded day-->  
+                    <select id="demanded-birth-day" name="day-numbers"></select>
                 </div>
-                
             </div>
-        </section>
+        </div>
         
+        <!--Input containr | input button-->
+        <div id="input-btn-div">
+            <button id ="input-btn">Know Your Age</button> 
+        </div>
     </section>
+    
+    <!--Input container | ballons-->
+    <section class="ballons">
+        <!--ballons images-->
+        <img class = "ballon"src = "images/balloon.png">
+        <img class = "ballon"src = "images/balloon.png">
+        <img class = "ballon"src = "images/balloon.png">
+        <img class = "ballon"src = "images/balloon.png">
+        <img class = "ballon"src = "images/balloon.png">    
+    </section>
+
+</section>
+<!--JavaScript-->    
+<script src = "app.js"></script>
 </body>
 </html>
