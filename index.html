@@ -34,7 +34,7 @@
         <section class="input-container">
             <div id="input-container-text"> <!--Input container | text-->
                 <h1>Know your age</h1>
-                <h4>in: days, hours, minutes and seconds</h4>
+                <h4>in: Years, Months, days, hours, minutes and seconds</h4>
             </div>
 
             <div id="input-container-div"> <!--Input container | div:where the <select> tags will appear and age calculations-->
@@ -47,11 +47,11 @@
                 <div id="birth-date-input">
                     
                     <!--Birth date input | Inputing birth year-->
-                    <input onchange="createFebruaryOptions(birthYear,birthMonth,birthDaySelect,birthDayOption,birthDayOptionTxt)" 
-                    name = "birth-year"id = "birth-year" type="number"  min = "1800"  placeholder=" Birth year...">
+                    <input  onchange="createFebruaryOptions(birthYear,birthMonth,birthDaySelect,birthDayOption)" 
+                    name = "birth-year"id = "birth-year" type="number"  placeholder=" Birth year..." >
                     
                     <!--Birth date input | Inputing birth month-->
-                    <select onchange="changeDayNum(birthYear,birthMonth,birthDaySelect,birthDayOption,birthDayOptionTxt)" 
+                    <select onchange="changeDayNum(birthYear,birthMonth,birthDaySelect,birthDayOption)" 
                     id="birth-month" name="months">
                         
                        <!--Inputing birth month | month options-->
@@ -82,11 +82,12 @@
                 <div id="demanded-date-input">
                     
                     <!--Demanded date input | Inputing demanded year-->
-                    <input maxlength = "4" onchange="createFebruaryOptions(demandedYear,demandedMonth,demandedDaySelect,demandedDayOption, demandedDayOptionTxt)" name = "demanded-birth-year"id = "demanded-birth-year" type="number"  min = "1800" placeholder=" Birth year...">
+                    <input  onchange="createFebruaryOptions(demandedYear,demandedMonth,demandedDaySelect,demandedDayOption)" 
+                    name = "demanded-year"id = "demanded-year" type="number"  placeholder=" Birth year...">
                     
                     <!--Demanded date input | Inputing demanded month-->
-                    <select onchange="changeDayNum(demandedYear,demandedMonth,demandedDaySelect,demandedDayOption, demandedDayOptionTxt)" 
-                    id="demanded-birth-month" name="months">
+                    <select onchange="changeDayNum(demandedYear,demandedMonth,demandedDaySelect,demandedDayOption)" 
+                    id="demanded-month" name="months">
                     
                         <!--Inputing demanded month | month options-->
                         <option value= "0" >January</option>
@@ -105,7 +106,7 @@
 
 
                     <!--Demanded date input | Inputing demanded day-->  
-                    <select id="demanded-birth-day" name="day-numbers"></select>
+                    <select id="demanded-day" name="day-numbers"></select>
                 </div>
             </div>
         </div>
